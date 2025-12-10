@@ -94,4 +94,10 @@ echo " Tomcat 10.1.50 Installed Successfully!"
 echo " Access: http://<server-ip>:8080"
 echo " Folder: /opt/tomcat10"
 echo "====================================="
-===============================================================================================================================================================================
+==============================================================================================================================================================================
+
+sudo rm -rf /opt/tomcat10/webapps/economic-times-app*
+sudo cp target/economic-times-app.war /opt/tomcat10/webapps/
+sudo /opt/tomcat10/bin/shutdown.sh
+sudo /opt/tomcat10/bin/startup.sh
+
