@@ -47,7 +47,7 @@ jobs:
 
       # Deploy to remote Tomcat server
       - name: Deploy WAR to Tomcat
-        uses: appleboy/scp-action@v1.0
+        uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.TOMCAT_HOST }}
           username: ${{ secrets.TOMCAT_USER }}
@@ -57,7 +57,7 @@ jobs:
 
       # Restart Tomcat service
       - name: Restart Tomcat
-        uses: appleboy/ssh-action@v1.0
+        uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.TOMCAT_HOST }}
           username: ${{ secrets.TOMCAT_USER }}
