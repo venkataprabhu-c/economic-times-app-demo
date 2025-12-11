@@ -60,7 +60,11 @@ jobs:
         cp ./war/*.war tomcat10/webapps/
         nohup tomcat10/bin/startup.sh &
         sleep 10
-    
+        
+    - name: Status check
+      run: |
+        curl - I http://localhost:8080/economic-times-app/ || true
+        
     - name: Verify app content
       run: |
         RESPONSE=$(curl -s http://localhost:8080/economic-times-app/)
